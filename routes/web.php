@@ -41,6 +41,9 @@ Route::get('/xem-truyen/{comic_id}/{chapter_id}',[\App\Http\Controllers\DungChun
 //comment
 Route::post('/comment/{comic_id}/{user_id}',[\App\Http\Controllers\CommentController::class,'uploadComment'])->name('uploadComment');
 
+//tim kiem
+Route::get('/search/{comic_name}',[\App\Http\Controllers\TimKiemController::class,'SearchComics'])->name('searchComics');
+
 //người dùng
 Route::get('/user/form-chinh-sua/{id}',[\App\Http\Controllers\NguoiDungController::class,'formChinhSua'])->name('user.formChinhSua');
 Route::post('/user/chinh-sua-thong-tin/{id}',[\App\Http\Controllers\NguoiDungController::class,'suaThongTinCaNhan'])->name('user.suaThongTinCaNhan');
